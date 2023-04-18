@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
     private final String GENIAL_LOG = "RECICLER";
     private CameraBridgeViewBase cameraBridgeViewBase;
     private BaseLoaderCallback baseLoaderCallback;
+    static {
+       System.loadLibrary("recicler");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +78,11 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         };
     }
 
+    public native String process();
+
+    public String processInJava(){
+        return "Processed in Java";
+    }
     @Override
     public void onCameraViewStarted(int width, int height) {
 
@@ -101,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
             baseLoaderCallback.onManagerConnected(baseLoaderCallback.SUCCESS);
         }
     }
+
 
     // ==================================== manter na tela cheia =============================================
     @Override
