@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Recicler</string>
+    <string name="vr_btn_text">VR GO</string>
+    <string name="descricao_img_gemeo">descricao_img_gemeo</string>
 </resources>

@@ -4,9 +4,11 @@ import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import android.view.SurfaceView;
 
@@ -76,6 +78,20 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
                 }
             }
         };
+
+        Button btn_vr = (Button) findViewById(R.id.btn_vr);
+        btn_vr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ver_tela_vr();
+            }
+        });
+    }
+
+    private void ver_tela_vr() {
+        Intent intent = new Intent(this, MainActivityVR.class);
+
+        startActivity(intent);
     }
 
     public native String process();
